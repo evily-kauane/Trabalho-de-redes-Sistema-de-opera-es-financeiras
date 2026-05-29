@@ -29,7 +29,32 @@ public class UsuarioCliente {
                 double valor = 0.0;
 
 
-                //parte de Evily
+                if (opcao == 1) {
+                } else if (opcao == 2) {
+                    System.out.print("Digite o valor do depósito (use '.' para centavos): R$ ");
+                    try {
+                        valor = scanner.nextDouble();
+                        scanner.nextLine();
+                    } catch (NumberFormatException e) {
+                        System.out.println("Valor inválido. Digite apenas números.");
+                        continue;
+                    }
+                } else if (opcao == 3) {
+                    System.out.print("Digite o valor do saque (use '.' para centavos): R$ ");
+                    try {
+                        valor = scanner.nextDouble();
+                        scanner.nextLine();
+                    } catch (NumberFormatException e) {
+                        System.out.println("Valor inválido. Digite apenas números.");
+                        continue;
+                    }
+                } else if (opcao == 4) {
+                    System.out.println("Obrigado por utilizar nosso banco!");
+                    break;
+                } else {
+                    System.out.println("Opção inválida!");
+                    continue;
+                }
 
                 String requisicao = opcao + ";" + conta + ";" + valor;
                 saida.println(requisicao);
